@@ -5,6 +5,8 @@ import 'package:new_touch_test/app/core/utils/empty_padding.dart';
 import 'package:new_touch_test/app/module/home/widget/categories_widget.dart';
 import 'package:new_touch_test/app/module/home/widget/product_widget.dart';
 
+import '../../core/values/app_string.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const  HomeScreen({super.key});
@@ -22,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           children:  [
             const CategoriesWidget(),
             15.ph,
-            const ProductWidget(title: 'المنتجات',)
+            const ProductWidget(title: AppString.product,)
           ],
         ),
       ),

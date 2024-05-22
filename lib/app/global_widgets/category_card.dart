@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
 import 'package:new_touch_test/app/global_widgets/custom_cached_network_image.dart';
 
+import '../core/utils/constant.dart';
+
 
 class CategoryCard extends StatelessWidget {
   final GestureTapCallback onTap;
@@ -29,7 +31,7 @@ class CategoryCard extends StatelessWidget {
       child: Container(
         width: 110.w,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.w),
+            borderRadius: BorderRadius.circular(AppConstant.defaultRadius),
             color: Theme.of(context).primaryColor,
         ),
         child: Padding(

@@ -6,7 +6,8 @@ import 'package:new_touch_test/app/core/utils/empty_padding.dart';
 import 'package:new_touch_test/app/global_widgets/custom_buttons.dart';
 import 'package:new_touch_test/app/module/home/widget/product_widget.dart';
 import 'package:new_touch_test/app/module/product_details/widget/product_details_header.dart';
-
+import '../../core/utils/constant.dart';
+import '../../core/values/app_string.dart';
 import '../../data/model/product_model.dart';
 import '../../global_widgets/custom_app_bar.dart';
 
@@ -36,7 +37,7 @@ class ProductDetailsScreen extends StatelessWidget {
 
               Padding(
                 padding:  EdgeInsets.all(10.0.w),
-                child: const ProductWidget(title: "منتجات ذات صلة",),
+                child: const ProductWidget(title: AppString.relatedProduct,),
               )
 
 
@@ -53,15 +54,15 @@ class ProductDetailsScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(8.w),
-                  topRight: Radius.circular(8.w),
+                  topLeft: Radius.circular(AppConstant.defaultRadius),
+                  topRight: Radius.circular(AppConstant.defaultRadius),
 
                 )
             ),
             child: CustomButtons(
               height: 40.h,
               buttonColor: Theme.of(context).accentColor,
-              text: "أضف الى السلة",
+              text: AppString.addToCart,
               onTap: () {},
 
             ),

@@ -7,7 +7,7 @@ enum Status { loading, error, loaded, onLine }
 
 String next = '';
 
-abstract class QueryModel with ChangeNotifier {
+abstract class AppProvider with ChangeNotifier {
   final Dio _dio = Dio(
     BaseOptions(
         responseType: ResponseType.json,
@@ -35,7 +35,7 @@ abstract class QueryModel with ChangeNotifier {
 
 
 
-  QueryModel(BuildContext  context)
+  AppProvider(BuildContext  context)
       : items = [],
         links = [] {
     startLoading();

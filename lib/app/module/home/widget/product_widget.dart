@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
-import 'package:new_touch_test/app/data/controller/product_controller.dart';
+import 'package:new_touch_test/app/data/providers/product_provider.dart';
 import 'package:new_touch_test/app/global_widgets/custom_product_card.dart';
 import 'package:new_touch_test/app/module/product_details/product_details_screen.dart';
 import 'package:new_touch_test/app/services/screen_navigation_service.dart';
@@ -15,7 +15,7 @@ class ProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var productController = Provider.of<ProductController>(context);
+    var productProvider = Provider.of<ProductProvider>(context);
     return  SizedBox(
       height: 340.h,
       child: Column(
@@ -33,17 +33,17 @@ class ProductWidget extends StatelessWidget {
           5.ph,
 
           Flexible(
-            child: productController.isLoading || productController.loadingFailed
+            child: productProvider.isLoading || productProvider.loadingFailed
                 ? const CategoryShimmer()
                 : ListView.separated(
-              itemCount: productController.items.length,
+              itemCount: productProvider.items.length,
               shrinkWrap: true,
               primary: false,
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context , _) => 8.pw,
               itemBuilder: (context, index) {
-                 var product = productController.items[index];
+                 var product = productProvider.items[index];
                 return Padding(
                   padding:  EdgeInsets.symmetric(vertical: 5.h),
                   child: CustomProductCard(

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
-
+import '../core/utils/constant.dart';
 class TitleWithAddButton extends StatelessWidget {
   final String title;
   final GestureTapCallback onTap;
@@ -52,14 +52,14 @@ class TitleWithAddButton extends StatelessWidget {
                   width: 25.w,
                   padding:  EdgeInsets.all(5.w),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.w),
+                    borderRadius: BorderRadius.circular(AppConstant.defaultRadius),
                     color: Theme.of(context).primaryColor,
                   ),
                   child: Container(
                     height: 10.h,
                     width: 10.w,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.w),
+                      borderRadius: BorderRadius.circular(AppConstant.defaultRadius),
                       color: Theme.of(context).accentColor,
                     ),
                     child: Icon(

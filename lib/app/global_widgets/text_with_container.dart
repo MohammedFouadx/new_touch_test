@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
+import '../core/utils/constant.dart';
 
 class TextWithContainer extends StatelessWidget {
   final String text;
@@ -25,7 +26,7 @@ class TextWithContainer extends StatelessWidget {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: containerColor ?? Theme.of(context).accentColor,
-        borderRadius: BorderRadius.circular(8.w),
+        borderRadius: BorderRadius.circular(AppConstant.defaultRadius),
       ),
       child: subText == null
           ? Text(

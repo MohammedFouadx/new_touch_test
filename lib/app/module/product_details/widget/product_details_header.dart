@@ -3,8 +3,10 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
+import 'package:new_touch_test/app/core/values/app_icons.dart';
 import 'package:new_touch_test/app/global_widgets/text_with_container.dart';
 import 'package:provider/provider.dart';
+import '../../../core/values/app_string.dart';
 import '../../../data/model/product_model.dart';
 import '../../../global_widgets/custom_cached_network_image.dart';
 
@@ -101,7 +103,7 @@ class ProductDetailsHeader extends StatelessWidget {
                       children: [
 
                         Text(
-                            "${product.price}  ريال يمني ",
+                            "${product.price} ${AppString.currency}",
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.bodyText1!.copyWith(
                                 fontWeight: FontWeight.bold
@@ -110,7 +112,7 @@ class ProductDetailsHeader extends StatelessWidget {
 
                         20.pw,
                         Text(
-                          "خصم",
+                          AppString.discount,
                           style: Theme.of(context).textTheme.caption!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.green
@@ -136,14 +138,14 @@ class ProductDetailsHeader extends StatelessWidget {
                         if(product.quantity! > 0)
                              TextWithContainer(
                                width: 80.w,
-                              text: "متوفر",
+                              text: AppString.available,
                               containerColor: Colors.green,
                               subText: product.quantity.toString(),
                             )
 
                         else
                          const TextWithContainer(
-                           text: "غير متوفر",
+                           text: AppString.unavailable,
                            containerColor: Colors.red,
                          )
                       ],

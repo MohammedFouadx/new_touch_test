@@ -1,14 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_touch_test/app/data/controller/category_controller.dart';
-import 'package:new_touch_test/app/data/controller/product_controller.dart';
-import 'package:new_touch_test/app/module/start/controller/start_controller.dart';
+import 'package:new_touch_test/app/module/start/provider/start_provider.dart';
 import 'package:new_touch_test/app/module/start/start_screen.dart';
 import 'package:provider/provider.dart';
-
+import 'package:new_touch_test/app/exports/provider.dart';
 import 'core/theme/app_theme.dart';
-import 'module/home/home_screen.dart';
 
 class NewTouchApp extends StatelessWidget {
   const NewTouchApp({super.key});
@@ -17,9 +14,9 @@ class NewTouchApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CategoryController(context)),
-        ChangeNotifierProvider(create: (context) => StartController()),
-        ChangeNotifierProvider(create: (context) => ProductController(context)),
+        ChangeNotifierProvider(create: (context) => CategoryProvider(context)),
+        ChangeNotifierProvider(create: (context) => StartProvider()),
+        ChangeNotifierProvider(create: (context) => ProductProvider(context)),
       ],
       child: const MaterialAppWithTheme(),
     );

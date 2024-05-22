@@ -1,11 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_touch_test/app/data/controller/product_controller.dart';
-import 'package:new_touch_test/app/global_widgets/title_with_add_button.dart';
+import 'package:new_touch_test/app/data/providers/category_provider.dart';
 import 'package:provider/provider.dart';
-
-import '../../data/controller/category_controller.dart';
 import '../../global_widgets/category_card.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -13,7 +10,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cateController = Provider.of<CategoryController>(context);
+    var categoryProvider = Provider.of<CategoryProvider>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: Padding(
@@ -29,14 +26,14 @@ class CategoriesScreen extends StatelessWidget {
               crossAxisSpacing: 15, // the space between them horizontally
               mainAxisSpacing: 15
           ),
-          itemCount: cateController.items.length,
+          itemCount: categoryProvider.items.length,
           itemBuilder: (context , index){
             return CategoryCard(
               onTap: (){
 
               },
-              name: cateController.items[index].text,
-              image: cateController.items[index].imageUrl,
+              name: categoryProvider.items[index].text,
+              image: categoryProvider.items[index].imageUrl,
             );
 
           },

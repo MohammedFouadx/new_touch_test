@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-class StartController extends ChangeNotifier {
+class StartProvider extends ChangeNotifier {
 
   int _currentIndex = 0;
 

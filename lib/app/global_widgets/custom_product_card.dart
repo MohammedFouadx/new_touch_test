@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
 import 'package:new_touch_test/app/global_widgets/text_with_container.dart';
 import 'custom_cached_network_image.dart';
-
+import '../core/utils/constant.dart';
 
 class CustomProductCard extends StatelessWidget {
   final GestureTapCallback onTap;
@@ -34,7 +34,7 @@ class CustomProductCard extends StatelessWidget {
         width: 167.w,
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.w),
+          borderRadius: BorderRadius.circular(AppConstant.defaultRadius),
           color: Theme.of(context).primaryColor, // white color
         ),
         child: Column(

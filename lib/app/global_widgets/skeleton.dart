@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../core/utils/constant.dart';
 
 class Skeleton extends StatelessWidget {
   const Skeleton({
@@ -19,7 +19,7 @@ class Skeleton extends StatelessWidget {
       padding:  EdgeInsets.all(8.0.h),
       decoration: BoxDecoration(
           color: Theme.of(context).selectedRowColor,
-          borderRadius:  BorderRadius.all(Radius.circular(8.w))),
+          borderRadius:  BorderRadius.all(Radius.circular(AppConstant.defaultRadius))),
     );
   }
 }

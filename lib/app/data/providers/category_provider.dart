@@ -1,12 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:new_touch_test/app/core/utils/app_url.dart';
-import 'package:new_touch_test/app/data/controller/app_controller.dart';
-import 'package:new_touch_test/app/data/model/category_model.dart';
+
+import '../model/category_model.dart';
+import 'app_provider.dart';
 
 
-class CategoryController extends QueryModel {
-  CategoryController(super.context);
+class CategoryProvider extends AppProvider {
+  CategoryProvider(super.context);
 
   @override
   Future loadData([BuildContext? context]) async{

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_touch_test/app/core/utils/constant.dart';
 import 'custom_cached_network_image.dart';
 
 class CustomCategoryCard extends StatelessWidget {
@@ -30,7 +31,7 @@ class CustomCategoryCard extends StatelessWidget {
           height: 40.h,
           width: 167.w,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.w),
+            borderRadius: BorderRadius.circular(AppConstant.defaultRadius),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -42,8 +43,8 @@ class CustomCategoryCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: containerNameColor ??  Theme.of(context).primaryColor,
                     borderRadius:  BorderRadius.only(
-                      topRight: Radius.circular(8.w),
-                      topLeft: Radius.circular(8.w),
+                      topRight: Radius.circular(AppConstant.defaultRadius),
+                      topLeft: Radius.circular(AppConstant.defaultRadius),
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -69,8 +70,8 @@ class CustomCategoryCard extends StatelessWidget {
               /// image
               ClipRRect(
                 borderRadius:  BorderRadius.only(
-                  bottomRight: Radius.circular(8.w),
-                  bottomLeft: Radius.circular(8.w),
+                  bottomRight: Radius.circular(AppConstant.defaultRadius),
+                  bottomLeft: Radius.circular(AppConstant.defaultRadius),
                 ),
                 child: CustomCachedNetworkImage(
                   imageUrl:  image,
@@ -106,8 +107,8 @@ class CustomCategoryCard extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Theme.of(context).secondaryHeaderColor,
                     borderRadius:  BorderRadius.only(
-                      topRight: Radius.circular(8.w),
-                      topLeft: Radius.circular(8.w),
+                      topRight: Radius.circular(AppConstant.defaultRadius),
+                      topLeft: Radius.circular(AppConstant.defaultRadius),
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -130,8 +131,8 @@ class CustomCategoryCard extends StatelessWidget {
                 width: 167.w,
                 child: ClipRRect(
                   borderRadius:  BorderRadius.only(
-                    bottomLeft: Radius.circular(8.w),
-                    bottomRight: Radius.circular(8.w),
+                    bottomLeft: Radius.circular(AppConstant.defaultRadius),
+                    bottomRight: Radius.circular(AppConstant.defaultRadius),
                   ),
                   child: CustomCachedNetworkImage(
                     fit: BoxFit.fill,

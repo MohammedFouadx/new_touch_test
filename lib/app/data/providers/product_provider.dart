@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:new_touch_test/app/core/utils/app_url.dart';
-import 'package:new_touch_test/app/data/controller/app_controller.dart';
+import 'package:new_touch_test/app/data/providers/app_provider.dart';
 
 import '../model/product_model.dart';
 
-class ProductController extends QueryModel {
-  ProductController(super.context);
+class ProductProvider extends AppProvider {
+  ProductProvider(super.context);
 
   @override
   Future loadData([BuildContext? context]) async {

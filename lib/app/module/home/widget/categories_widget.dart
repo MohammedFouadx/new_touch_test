@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
+import 'package:new_touch_test/app/core/values/app_string.dart';
+import 'package:new_touch_test/app/data/providers/category_provider.dart';
 import 'package:new_touch_test/app/global_widgets/category_shimmer.dart';
 import 'package:provider/provider.dart';
-
-import '../../../data/controller/category_controller.dart';
 import '../../../global_widgets/category_card.dart';
 
 class CategoriesWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class CategoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cateController = Provider.of<CategoryController>(context);
+    var categoryProvider = Provider.of<CategoryProvider>(context);
     return  SizedBox(
       height: 170.h,
       child: Column(
@@ -21,7 +21,7 @@ class CategoriesWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-              'الفئات',
+              AppString.category,
               style: Theme.of(context).textTheme.headline6!.copyWith(
                   fontWeight: FontWeight.bold
               )
@@ -31,10 +31,10 @@ class CategoriesWidget extends StatelessWidget {
           5.ph,
 
           Flexible(
-            child: cateController.isLoading || cateController.loadingFailed
+            child: categoryProvider.isLoading || categoryProvider.loadingFailed
                 ? const CategoryShimmer()
                 : ListView.separated(
-              itemCount: cateController.items.length,
+              itemCount: categoryProvider.items.length,
               shrinkWrap: true,
               primary: false,
               physics: const BouncingScrollPhysics(),
@@ -47,8 +47,8 @@ class CategoriesWidget extends StatelessWidget {
                     onTap: (){
 
                     },
-                    name: cateController.items[index].text,
-                    image: cateController.items[index].imageUrl,
+                    name: categoryProvider.items[index].text,
+                    image: categoryProvider.items[index].imageUrl,
                   ),
                 );
               },
