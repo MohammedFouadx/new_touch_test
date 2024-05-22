@@ -6,6 +6,7 @@ import 'package:new_touch_test/app/module/start/start_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:new_touch_test/app/exports/provider.dart';
 import 'core/theme/app_theme.dart';
+import 'core/utils/route.dart';
 
 class NewTouchApp extends StatelessWidget {
   const NewTouchApp({super.key});
@@ -36,6 +37,7 @@ class MaterialAppWithTheme extends StatelessWidget {
         return  MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.getLightTheme(),
+          routes: Routes.routes,
           home: Directionality(
             textDirection: TextDirection.rtl,
             child: StartScreen()

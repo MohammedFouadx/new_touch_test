@@ -13,7 +13,7 @@ class CategoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var categoryProvider = Provider.of<CategoryProvider>(context);
+    CategoryProvider categoryProvider = Provider.of(context);
     return  SizedBox(
       height: 170.h,
       child: Column(

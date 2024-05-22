@@ -8,6 +8,14 @@ void pushScreen(BuildContext context , Widget widget){
     );
 }
 
+void pushNamedScreen(BuildContext context , String route , {Object? arguments}){
+  Navigator.pushNamed(
+    context,
+    route,
+    arguments: arguments,
+  );
+}
+
 void pushScreenReplacement(BuildContext context , Widget widget){
   Navigator.pushReplacement(
       context,

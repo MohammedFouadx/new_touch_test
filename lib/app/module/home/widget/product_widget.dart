@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
+import 'package:new_touch_test/app/core/utils/route.dart';
 import 'package:new_touch_test/app/data/providers/product_provider.dart';
 import 'package:new_touch_test/app/global_widgets/custom_product_card.dart';
 import 'package:new_touch_test/app/module/product_details/product_details_screen.dart';
@@ -15,7 +16,7 @@ class ProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var productProvider = Provider.of<ProductProvider>(context);
+    ProductProvider productProvider = Provider.of(context);
     return  SizedBox(
       height: 340.h,
       child: Column(
@@ -53,7 +54,11 @@ class ProductWidget extends StatelessWidget {
                     categoryName: product.additional.categoryName.toString(),
                     itemFlagName: product.additional.itemFlagName.toString(),
                     onTap: () {
-                      pushScreen(context, ProductDetailsScreen(product: product));
+                      pushNamedScreen(
+                        context,
+                        Routes.productDetails,
+                        arguments:  product
+                      );
                     },
                   ),
                 );

@@ -26,7 +26,7 @@ class StartScreen extends StatelessWidget {
    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    var startProvider = Provider.of<StartProvider>(context);
+    StartProvider startProvider = Provider.of(context);
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: PreferredSize(
