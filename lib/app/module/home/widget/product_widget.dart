@@ -55,10 +55,11 @@ class ProductWidget extends StatelessWidget {
                     itemFlagName: product.additional.itemFlagName.toString(),
                     onTap: () {
                       pushNamedScreen(
-                        context,
-                        Routes.productDetails,
-                        arguments:  product
+                          context,
+                          Routes.productDetails,
+                          arguments:  product
                       );
+
                     },
                   ),
                 );

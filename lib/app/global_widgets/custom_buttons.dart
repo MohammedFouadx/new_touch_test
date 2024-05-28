@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/core/utils/empty_padding.dart';
 
+import '../core/utils/constant.dart';
+
 
 
 class CustomButtons extends StatelessWidget {
@@ -15,7 +17,7 @@ class CustomButtons extends StatelessWidget {
   final Widget? textWidget;
   final GestureTapCallback? onTap;
   final Widget? customWidget;
-  // final GestureTapCallback? onTapCustomWidget;
+  final bool? isLoading;
   const CustomButtons({
     Key? key,
     required this.text,
@@ -26,14 +28,29 @@ class CustomButtons extends StatelessWidget {
     this.onTap,
     this.textWidget,
     this.customWidget,
-    // this.onTapCustomWidget
+    this.isLoading
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
-      child:  Container(
+      onTap: isLoading== true ? null : onTap,
+      child:  isLoading == true
+          ? Container(
+        width: width,
+        height: height ?? 40.h ,
+        alignment: Alignment.center,
+        padding:  EdgeInsets.all(5.w),
+        decoration: BoxDecoration(
+            color: Theme.of(context).backgroundColor,
+            borderRadius: BorderRadius.circular(AppConstant.defaultRadius)
+        ),
+
+        child: const Center(
+            child:  CircularProgressIndicator()
+        ),
+      )
+          : Container(
         width: width,
         height: height ?? 40.h ,
         alignment: Alignment.center,

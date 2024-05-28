@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
   Widget _buildDrawerIcon(BuildContext context) {
     return InkWell(
         onTap: () {
-          scaffoldKey?.currentState!.openDrawer();
+          scaffoldKey?.currentState?.openDrawer();
         },
         child:  SVGPictureAssets(
           image: AppIcons.drawer,
