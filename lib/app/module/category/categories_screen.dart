@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_touch_test/app/data/providers/category_provider.dart';
 import 'package:provider/provider.dart';
 import '../../global_widgets/category_card.dart';
+import '../../global_widgets/category_shimmer.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -15,7 +16,9 @@ class CategoriesScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).backgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0.w , vertical: 10.h),
-        child: GridView.builder(
+        child: categoryProvider.isLoading || categoryProvider.loadingFailed
+            ? const CategoryShimmer()
+            : GridView.builder(
           shrinkWrap: true,
           primary: false,
           scrollDirection: Axis.vertical,

@@ -8,8 +8,11 @@ import 'custom_two_text.dart';
 
 class BottomSheetHeader extends StatelessWidget {
   final String title;
-  final String subTitle;
-  const BottomSheetHeader({super.key, required this.title, required this.subTitle});
+  final String? subTitle;
+  const BottomSheetHeader({
+    super.key,
+    required this.title,
+     this.subTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +46,10 @@ class BottomSheetHeader extends StatelessWidget {
           ),
         ),
         3.ph,
-        Text(
-          subTitle,
+        subTitle == null
+        ? 0.ph
+        : Text(
+          subTitle.toString(),
           style: Theme.of(context).textTheme.caption!.copyWith(
               fontWeight: FontWeight.bold
           ),

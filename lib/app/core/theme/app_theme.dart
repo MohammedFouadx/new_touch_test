@@ -90,7 +90,7 @@ class AppTheme {
           bodyText1: TextStyle(
               fontSize: 16.0.sp, color: Colors.black, fontWeight: FontWeight.w400),
           bodyText2: TextStyle(
-              fontSize: 14.0.sp, color: Colors.black, fontWeight: FontWeight.w400),
+              fontSize: 12.0.sp, color: Colors.black, fontWeight: FontWeight.w400),
 
           caption: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
 

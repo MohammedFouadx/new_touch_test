@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:new_touch_test/app/core/utils/app_url.dart';
-
 import '../model/category_model.dart';
 import 'app_provider.dart';
 

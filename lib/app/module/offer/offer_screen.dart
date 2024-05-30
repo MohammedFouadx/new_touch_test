@@ -10,7 +10,7 @@ class OfferScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
         alignment: Alignment.center,
-        child: Text(
+        child: const Text(
             "screen 3"
         ),
       ),

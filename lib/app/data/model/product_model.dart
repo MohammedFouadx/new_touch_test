@@ -10,14 +10,14 @@ class ProductData {
     if (json['data'] != null) {
       data = <Product>[];
       json['data'].forEach((v) {
-        data!.add(new Product.fromJson(v));
+        data!.add(Product.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['statusCode'] = this.statusCode;
+    data['statusCode'] = statusCode;
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -41,6 +41,7 @@ class Product {
   String? name;
   double? price;
   double? quantity;
+  String? description;
   Additional? additional;
 
   Product(
@@ -59,6 +60,7 @@ class Product {
         this.name,
         this.price,
         this.quantity,
+        this.description,
         this.additional});
 
   Product.fromJson(Map<String, dynamic> json) {
@@ -77,6 +79,7 @@ class Product {
     name = json['name'];
     price = json['price'];
     quantity = json['quantity'];
+    description = json['description'];
     additional = json['additional'] != null
         ? new Additional.fromJson(json['additional'])
         : null;
@@ -84,23 +87,24 @@ class Product {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['profitRate'] = this.profitRate;
-    data['discountRate'] = this.discountRate;
-    data['imageUrl'] = this.imageUrl;
-    data['thumbUrl'] = this.thumbUrl;
-    data['linkUrl'] = this.linkUrl;
-    data['id'] = this.id;
-    data['shortId'] = this.shortId;
-    data['itemFlagId'] = this.itemFlagId;
-    data['taxTemplateId'] = this.taxTemplateId;
-    data['unitTemplateId'] = this.unitTemplateId;
-    data['categoryId'] = this.categoryId;
-    data['storeId'] = this.storeId;
-    data['name'] = this.name;
-    data['price'] = this.price;
-    data['quantity'] = this.quantity;
-    if (this.additional != null) {
-      data['additional'] = this.additional!.toJson();
+    data['profitRate'] = profitRate;
+    data['discountRate'] = discountRate;
+    data['imageUrl'] = imageUrl;
+    data['thumbUrl'] = thumbUrl;
+    data['linkUrl'] = linkUrl;
+    data['id'] = id;
+    data['shortId'] = shortId;
+    data['itemFlagId'] = itemFlagId;
+    data['taxTemplateId'] = taxTemplateId;
+    data['unitTemplateId'] = unitTemplateId;
+    data['categoryId'] = categoryId;
+    data['storeId'] = storeId;
+    data['name'] = name;
+    data['price'] = price;
+    data['quantity'] = quantity;
+    data['description'] = description;
+    if (additional != null) {
+      data['additional'] = additional!.toJson();
     }
     return data;
   }
@@ -127,10 +131,10 @@ class Additional {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['taxVat'] = this.taxVat;
-    data['unitTemplateName'] = this.unitTemplateName;
-    data['itemFlagName'] = this.itemFlagName;
-    data['categoryName'] = this.categoryName;
+    data['taxVat'] = taxVat;
+    data['unitTemplateName'] = unitTemplateName;
+    data['itemFlagName'] = itemFlagName;
+    data['categoryName'] = categoryName;
     return data;
   }
 }

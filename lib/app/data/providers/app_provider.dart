@@ -3,7 +3,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../global_widgets/custom_dialog.dart';
 
 enum Status { loading, error, loaded, onLine }
 

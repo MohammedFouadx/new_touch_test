@@ -11,3 +11,6 @@ export '../global_widgets/skeleton.dart';
 export '../global_widgets/svg_picture_assets.dart';
 export '../global_widgets/text_with_container.dart';
 export '../global_widgets/title_with_add_button.dart';
+export '../global_widgets/custom_text_form_field.dart';
+export '../global_widgets/custom_dialog.dart';
+export '../global_widgets/bottom_sheet_header.dart';

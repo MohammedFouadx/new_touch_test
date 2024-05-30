@@ -18,6 +18,11 @@ class ProductDetailsHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double discountToDecimal = product.discountRate! / 100;
+
+    double discountAmount = product.price! * discountToDecimal;
+
+    double newPrice = product.price! - discountAmount;
     return Container(
       width: MediaQuery.of(context).size.width,
       color: Theme.of(context).primaryColor,
@@ -75,6 +80,7 @@ class ProductDetailsHeader extends StatelessWidget {
                             )
                         ),
 
+
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -95,6 +101,18 @@ class ProductDetailsHeader extends StatelessWidget {
 
                       ],
                     ),
+
+                    // product.description == null
+                    //  ? 0.ph
+                    //  : Padding(
+                    //      padding:  EdgeInsets.only(top : 10.w),
+                    //      child: Text(
+                    //         product.description.toString(),
+                    //         style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                    //             fontWeight: FontWeight.bold
+                    //         )
+                    //   ),
+                    //  ),
                     10.ph,
 
                     /// price & discount
@@ -105,27 +123,44 @@ class ProductDetailsHeader extends StatelessWidget {
                         Text(
                             "${product.price} ${AppString.currency}",
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                            style: product.discountRate == 0.0
+                             ? Theme.of(context).textTheme.bodyText1!.copyWith(
+                                fontWeight: FontWeight.bold
+                            )
+                                : Theme.of(context).textTheme.overline!.copyWith(
                                 fontWeight: FontWeight.bold
                             )
                         ),
 
                         20.pw,
-                        Text(
-                          AppString.discount,
-                          style: Theme.of(context).textTheme.caption!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green
-                          ),
-                        ),
-                        5.pw,
-                        Text(
-                          "% ${product.discountRate}",
-                          style: Theme.of(context).textTheme.caption!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green
-                          ),
-                        ),
+
+                        if(product.discountRate != 0.0)
+                          ...[
+                            Text(
+                              AppString.discount,
+                              style: Theme.of(context).textTheme.caption!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green
+                              ),
+                            ),
+                            5.pw,
+                            Text(
+                              "% ${product.discountRate}",
+                              style: Theme.of(context).textTheme.caption!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green
+                              ),
+                            ),
+                            10.pw,
+                            Text(
+                                "$newPrice ${AppString.currency}",
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    fontWeight: FontWeight.bold
+                                )
+                            ),
+                          ]
+
                       ],
                     ),
 
