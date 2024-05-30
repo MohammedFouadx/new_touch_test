@@ -15,7 +15,8 @@ abstract class AppProvider with ChangeNotifier {
         connectTimeout: const Duration(milliseconds: 80000),
         receiveTimeout: const Duration(milliseconds: 80000),
         headers: {
-          'Content-type': 'application/json-patch+json',
+          'accept': 'application/json',
+          'content-type': 'application/json',
         },
         validateStatus: (code) {
           if ((code! >= 200 && code <= 300) || code == 401) {
@@ -48,7 +49,7 @@ abstract class AppProvider with ChangeNotifier {
           queryParameters: parameters,
           options: Options(
               headers: {
-                'Content-type': 'application/json-patch+json',
+                'accept': 'application/json',
           }));
 
       if (errors.isNotEmpty) errors = "";
